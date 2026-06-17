@@ -1,0 +1,182 @@
+export interface Property {
+  id: string;
+  title: string;
+  price: number;
+  location: string;
+  city: string;
+  zone: string;
+  type: 'villa' | 'penthouse' | 'apartamento' | 'casa';
+  operation: 'venta' | 'alquiler';
+  bedrooms: number;
+  bathrooms: number;
+  area: number;
+  image: string;
+  featured: boolean;
+  description: string;
+  gallery?: PropertyGallery[];
+}
+
+export interface PropertyGallery {
+  section: 'cocina' | 'salon' | 'bano1' | 'bano2' | 'dormitorio' | 'exterior' | 'otros';
+  sectionLabel: string;
+  images: string[];
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  content: string;
+  rating: number;
+  image: string;
+  userId?: string;
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  image: string;
+}
+
+// Propiedades del Maresme - Vacío, esperando propiedades reales
+export const PROPERTIES: Property[] = [
+  {
+    id: 'prop-sant-andreu-1',
+    title: 'Casa Unifamiliar en Sant Andreu de Llavaneres',
+    price: 1900000,
+    location: 'Sant Andreu de Llavaneres',
+    city: 'Sant Andreu de Llavaneres',
+    zone: 'Residencial',
+    type: 'casa',
+    operation: 'venta',
+    bedrooms: 6,
+    bathrooms: 4,
+    area: 487,
+    image: '/manus-storage/Capturadepantalla2026-06-16094753_e578045b.png',
+    featured: true,
+    description: 'Hermosa casa unifamiliar en Sant Andreu de Llavaneres con amplios espacios, jardín y excelentes acabados. Perfecta para familias que buscan comodidad y tranquilidad.',
+    gallery: [
+      {
+        section: 'cocina',
+        sectionLabel: 'Cocina',
+        images: [
+          '/manus-storage/JoanSelva(9)_1f693f74.webp',
+          '/manus-storage/JoanSelva(11)_e76a5da9.webp',
+          '/manus-storage/JoanSelva(10)_5138ce48.webp'
+        ]
+      },
+      {
+        section: 'salon',
+        sectionLabel: 'Salón',
+        images: [
+          '/manus-storage/JoanSelva(22)_946d69d9.webp',
+          '/manus-storage/JoanSelva(24)_3cdb5ab1.webp',
+          '/manus-storage/JoanSelva(27)_9303893e.webp'
+        ]
+      },
+      {
+        section: 'bano1',
+        sectionLabel: 'Baño Principal',
+        images: [
+          '/manus-storage/JoanSelva(32)_d8f32d18.webp',
+          '/manus-storage/JoanSelva(34)_7f80aba8.webp',
+          '/manus-storage/JoanSelva(35)_91527dca.webp'
+        ]
+      },
+      {
+        section: 'bano2',
+        sectionLabel: 'Baño Secundario',
+        images: [
+          '/manus-storage/JoanSelva(36)_40a15380.webp',
+          '/manus-storage/JoanSelva(37)_33838f3b.webp'
+        ]
+      },
+      {
+        section: 'exterior',
+        sectionLabel: 'Exterior y Jardín',
+        images: [
+          '/manus-storage/WhatsAppImage2025-11-20at12.35.50_db0a102d.jpeg',
+          '/manus-storage/WhatsAppImage2025-11-20at12.35.50(1)_b98b2bfc.jpeg',
+          '/manus-storage/WhatsAppImage2025-11-20at12.35.51_9546223a.jpeg',
+          '/manus-storage/WhatsAppImage2025-11-20at12.36.38_1e2df378.jpeg'
+        ]
+      },
+      {
+        section: 'otros',
+        sectionLabel: 'Otros Espacios',
+        images: [
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.42_c16c2023.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.42(1)_2386e350.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.43(1)_67a9241f.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.43(3)_18837869.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.43(6)_bbd7d34f.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.43(8)_fa767796.jpeg',
+          '/manus-storage/WhatsAppImage2026-02-11at13.18.44(3)_0e988917.jpeg'
+        ]
+      }
+    ]
+  }
+];
+
+// Testimonios de clientes satisfechos
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'test-1',
+    name: 'Carla Martínez',
+    role: 'Vendedora de Propiedad en Mataró',
+    content: 'C&A nos ayudó a vender nuestra casa en apenas 3 meses. El equipo fue muy profesional y atento. Nos sentimos cómodos en todo el proceso.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80'
+  },
+  {
+    id: 'test-2',
+    name: 'Joan Puig',
+    role: 'Comprador en Calella',
+    content: 'Encontramos el piso perfecto gracias a C&A. El equipo conoce muy bien el Maresme y nos orientó excelentemente. Muy recomendable.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80'
+  },
+  {
+    id: 'test-3',
+    name: 'Marta López',
+    role: 'Inversora Inmobiliaria',
+    content: 'Llevo 2 años trabajando con C&A y siempre me ofrecen oportunidades interesantes. Profesionales, rápidos y confiables. Excelente servicio.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80'
+  }
+];
+
+// Blog con artículos sobre el Maresme y consejos inmobiliarios
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: 'blog-1',
+    title: 'Guía Completa: Comprar Casa en el Maresme en 2026',
+    excerpt: 'Todo lo que necesitas saber sobre el mercado inmobiliario del Maresme, precios, zonas recomendadas y consejos prácticos.',
+    category: 'Guías',
+    date: '31 de mayo de 2026',
+    readTime: '8 min',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'blog-2',
+    title: 'Mejores Zonas del Maresme para Vivir en Familia',
+    excerpt: 'Descubre las zonas más seguras y con mejor infraestructura para familias en el Maresme: escuelas, parques, servicios.',
+    category: 'Lifestyle',
+    date: '25 de mayo de 2026',
+    readTime: '6 min',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'blog-3',
+    title: 'Inversión Inmobiliaria en el Maresme: Rentabilidad y Oportunidades',
+    excerpt: 'Análisis del mercado de alquileres en el Maresme. Rentabilidad esperada, zonas con mayor demanda y tendencias 2026.',
+    category: 'Inversión',
+    date: '18 de mayo de 2026',
+    readTime: '10 min',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'
+  }
+];
